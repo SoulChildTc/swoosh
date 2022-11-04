@@ -25,7 +25,7 @@ def watch():
     content = get_clipboard()
     while True:
         new_content = get_clipboard()
-        if content != new_content:
+        if content != new_content and new_content != "":
             content = new_content
             set_remote_clipboard(new_content)
         time.sleep(1)
