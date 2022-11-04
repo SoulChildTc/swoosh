@@ -6,8 +6,6 @@ from watchClipBoard import watch
 
 app = Flask(__name__)
 
-CONTENT = ""
-
 
 @app.route('/setClipboard', methods=["POST"])
 def qiniu_callback():
@@ -20,6 +18,6 @@ def qiniu_callback():
 
 
 if __name__ == '__main__':
-    watchClipBoard = Thread(target=watch, args=CONTENT)
+    watchClipBoard = Thread(target=watch)
     watchClipBoard.start()
     app.run(host="0.0.0.0", debug=False)

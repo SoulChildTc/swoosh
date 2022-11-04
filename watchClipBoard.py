@@ -2,7 +2,7 @@ import pyperclip
 import time
 import requests
 
-HOST = ""
+HOST = "192.168.124.10"
 PORT = "5000"
 URL = "http://" + HOST + ":" + PORT
 
@@ -21,7 +21,8 @@ def set_remote_clipboard(content):
         print(e)
 
 
-def watch(content):
+def watch():
+    content = get_clipboard()
     while True:
         new_content = get_clipboard()
         if content != new_content:
