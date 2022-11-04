@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/setClipboard', methods=["POST"])
-def qiniu_callback():
+def set_clipboard():
     req = request.get_json()
     if "content" in req:
         pyperclip.copy(req.get('content'))
